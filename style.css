@@ -117,7 +117,7 @@ span {
 
 .query_input {
   place-content: center;
-  padding: 0;
+  /* padding: 0; */
 }
 
 .options {
