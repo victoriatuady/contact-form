@@ -80,7 +80,7 @@ form.addEventListener("submit", (e) => {
     // Condition 2: Checksif message is provided
     if (!message) {
       messages.style.border = "1px solid #d73c3c";
-      errors[4].innerHTML = "This is required";
+      errors[4].innerHTML = "This field is required";
       isVlalid = false;
 
       setTimeout(() => {
