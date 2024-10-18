@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <section>
+      <div id="success-message">
+        <p>
+          <img src="img/icon-success-check.svg" alt="checkbox" />
+          <span>Message Sent!</span>
+        </p>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </section>
+    <form id="form" novalidate>
+      <h4>Contact Us</h4>
+      <section class="names">
+        <div class="formNames">
+          <div class="form-title">
+            <label for="firstname">First Name<span>*</span></label>
+            <input type="text" name="firstname" id="firstname" required />
+            <p class="error-msg"></p>
+          </div>
+          <div class="form-title">
+            <label for="lastname">Last Name<span>*</span></label>
+            <input type="text" name="lastname" id="lastname" required />
+            <p class="error-msg"></p>
+          </div>
+        </div>
+        <div class="form-title">
+          <label for="email">Email Address<span>*</span></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            autocomplete="off"
+          />
+          <p class="error-msg"></p>
+        </div>
+      </section>
+
+      <div id="query_label">
+        <p>Query Type<span>*</span></p>
+      </div>
+      <div class="query">
+        <div class="query_input" id="query1">
+          <div class="options">
+            <input type="radio" name="option1" id="radio-button1"></input>
+            <label for="option1" id="text-span">General Enquiry</label>
+          </div>
+        </div>
+
+        <div class="query_input" id="query2">
+          <div class="options">
+            <input type="radio" name="option2"  id="radio-button2">
+            <label for="option2" id="text-span">Support Request</label>
+          </div>
+        </div>
+        <p class="error-msg" id="radio-error"></p>
+      </div>
+
+      <div class="form-title">
+        <label for="message">Message<span>*</span></label>
+        <textarea
+          name="message"
+          id="message"
+          required
+          spellcheck="true"
+        ></textarea>
+        <p class="error-msg" id="message-error"></p>
+      </div>
+      <div>
+        <div class="consent_check">
+          <input type="checkbox" id="checkbox" />
+          <label id="text-span" class="icon-check"
+            >I consent to being contacted by the team<span>*</span></label
+          >
+        </div>
+        <p class="error-msg" id="check-error"></p>
+      </div>
+      <button id="button" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
