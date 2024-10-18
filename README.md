@@ -35,12 +35,9 @@ Users should be able to:
 ![tablet view](design/tablet.png)
 ![error-message view](design/error-message.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://victoriatuady.github.io/contact-form/)
 
 ## My process
 
@@ -55,4 +52,4 @@ Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to t
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@victoriatuady](https://www.frontendmentor.io/profile/victoriatuady)
