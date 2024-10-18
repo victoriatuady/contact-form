@@ -95,8 +95,7 @@ textarea:hover {
 }
 
 .query_input:hover,
-.consent_check div:hover,
-.consent_check span:hover {
+.icon-check:hover {
   cursor: pointer;
 }
 
@@ -110,15 +109,15 @@ span {
   margin-top: 0.6rem;
 }
 
-.query_input {
-  place-content: center;
-  padding: 0;
-}
-
 .query {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.query_input {
+  place-content: center;
+  padding: 0;
 }
 
 .options {
