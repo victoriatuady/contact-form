@@ -37,7 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [live site URL](https://victoriatuady.github.io/contact-form/)
+- Solution URL:(https://github.com/victoriatuady/contact-form.git)
+- Live Site URL: (https://victoriatuady.github.io/contact-form/)
 
 ## My process
 
