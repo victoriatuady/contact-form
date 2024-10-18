@@ -118,6 +118,10 @@ form.addEventListener("submit", (e) => {
 
       //Scroll to success message
       scrollToSuccessMessage();
+
+      setTimeout(() => {
+        successAlert.style.display = "none";
+      }, 2000);
     }
   }
 });
