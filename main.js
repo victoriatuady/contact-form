@@ -1,4 +1,5 @@
-const inputs = document.querySelectorAll("input");
+const firstName = document.getElementById("firstname");
+const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
 const errors = document.querySelectorAll(".error-msg");
 const query1 = document.getElementById("query1");
@@ -42,86 +43,102 @@ function scrollToSuccessMessage() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  for (let i = 0; inputs.length; i++) {
-    const input = inputs[i];
-    const error = errors[i];
-    const validEmail = email.value.trim().match(regex);
-    const message = messages.value.trim();
+  const validEmail = email.value.trim().match(regex);
+  const message = messages.value.trim();
 
-    let isVlalid = true;
+  let isVlalid = true;
 
-    // Condition 1: Check if input is empty and email is vald
-    if (!input.value.trim()) {
-      input.style.border = "1px solid #d73c3c";
-      error.innerHTML = "This field is required";
-      isVlalid = false;
+  // Condition 1: Checks if first name is valid
+  if (!firstName.value.trim()) {
+    firstName.style.border = "1px solid #d73c3c";
+    errors[0].innerHTML = "This field is required";
+    isVlalid = false;
 
-      setTimeout(() => {
-        error.innerHTML = "";
-        input.style.border = "1px solid #87a3a6";
-      }, 2000);
-    } else if (input.type === "email" && !validEmail) {
-      email.value = "email@example.com";
-      email.style.color = "#d73c3c";
-      input.style.border = "1px solid #d73c3c";
-      error.innerHTML = "Please enter valid email address";
-      isVlalid = false;
+    setTimeout(() => {
+      errors[0].innerHTML = "";
+      firstName.style.border = "1px solid #87a3a6";
+    }, 2000);
+  }
 
-      setTimeout(() => {
-        email.value = "";
-        email.style.color = "#000";
-        input.style.border = "1px solid #87a3a6";
-        error.innerHTML = "";
-      }, 2000);
-    } else {
-      input.style.border = "1px solid #0c7d68";
-    }
+  // Condition 2: Checks if last name is valid
+  if (!lastName.value.trim()) {
+    lastName.style.border = "1px solid #d73c3c";
+    errors[1].innerHTML = "This field is required";
+    isVlalid = false;
 
-    // Condition 2: Checksif message is provided
-    if (!message) {
-      messages.style.border = "1px solid #d73c3c";
-      errors[4].innerHTML = "This field is required";
-      isVlalid = false;
+    setTimeout(() => {
+      errors[1].innerHTML = "";
+      lastName.style.border = "1px solid #87a3a6";
+    }, 2000);
+  }
 
-      setTimeout(() => {
-        messages.style.border = "1px solid #87a3a6";
-        errors[4].innerHTML = "";
-      }, 2000);
-    } else {
-      messages.style.border = "1px solid #0c7d68";
-    }
+  // Condition 3: Checks if email is valid
+  if (!email.value.trim()) {
+    email.style.border = "1px solid #d73c3c";
+    errors[2].innerHTML = "Please enter email address";
+    isVlalid = false;
 
-    // Condition 3: Check if radio button is clicked
-    if (!radioBtn1.checked && !radioBtn2.checked) {
-      errors[3].innerHTML = "Please select a query type";
-      isVlalid = false;
+    setTimeout(() => {
+      email.style.border = "1px solid #87a3a6";
+      errors[2].innerHTML = "";
+    }, 2000);
+  } else if (!validEmail) {
+    email.style.border = "1px solid #d73c3c";
+    email.value = "email@example.com";
+    email.style.color = "#d73c3c";
+    errors[2].innerHTML = "Please enter valid email address";
+    isVlalid = false;
 
-      setTimeout(() => {
-        errors[3].innerHTML = "";
-      }, 2000);
-    }
+    setTimeout(() => {
+      email.value = "";
+      email.style.color = "#000";
+      email.style.border = "1px solid #87a3a6";
+      errors[2].innerHTML = "";
+    }, 2000);
+  }
 
-    // Condition 4: Check if check box is checked
-    if (!checkbox.checked) {
-      errors[5].innerHTML =
-        "To submit this form, please consent to being contacted";
-      isVlalid = false;
+  // Condition 4: Checks if radio button is clicked
+  if (!radioBtn1.checked && !radioBtn2.checked) {
+    errors[3].innerHTML = "Please select a query type";
+    isVlalid = false;
 
-      setTimeout(() => {
-        errors[5].innerHTML = "";
-      }, 2000);
-    }
+    setTimeout(() => {
+      errors[3].innerHTML = "";
+    }, 2000);
+  }
 
-    // Condtion 5: Validate's if all inputs are correct.
-    if (isVlalid) {
-      successAlert.style.display = "block";
+  // Condition 5: Checks if message is provided
+  if (!message) {
+    messages.style.border = "1px solid #d73c3c";
+    errors[4].innerHTML = "This field is required";
+    isVlalid = false;
 
-      //Scroll to success message
-      scrollToSuccessMessage();
+    setTimeout(() => {
+      messages.style.border = "1px solid #87a3a6";
+      errors[4].innerHTML = "";
+    }, 2000);
+  }
 
-      setTimeout(() => {
-        successAlert.style.display = "none";
-      }, 2000);
-    }
+  // Condition 6: Checks if check box is checked
+  if (!checkbox.checked) {
+    errors[5].innerHTML =
+      "To submit this form, please consent to being contacted";
+    isVlalid = false;
+
+    setTimeout(() => {
+      errors[5].innerHTML = "";
+    }, 2000);
+  }
+
+  // Condtion 7: Validates if all inputs are correct.
+  if (isVlalid) {
+    successAlert.style.display = "block";
+
+    //Scroll to success message
+    scrollToSuccessMessage();
+
+    setTimeout(() => {
+      successAlert.style.display = "none";
+    }, 2000);
   }
 });
